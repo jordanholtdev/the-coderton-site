@@ -1,23 +1,41 @@
-# Example app with [chakra-ui](https://github.com/chakra-ui/chakra-ui)
+<p align="center">
+  </a>
+</p>
+<h1 align="center">
+  The Coderton newsletter site
+</h1>
 
-This example features how to use [chakra-ui](https://github.com/chakra-ui/chakra-ui) as the component library within a Next.js app.
+<p align="center">
+  <a href="https://twitter.com/intent/follow?screen_name=jordanholtdev">
+    <img src="https://img.shields.io/twitter/follow/jordanholtdev?style=social" />
+  </a>
+  <a href="https://github.com/jordanholtdev/the-coderton-site/graphs/commit-activity">
+    <img src="https://img.shields.io/github/last-commit/jordanholtdev/the-coderton-site"/>
+  </a>
+</p>
 
-We are connecting the Next.js `_app.js` with `chakra-ui`'s Theme and ColorMode containers so the pages can have app-wide dark/light mode. We are also creating some components which shows the usage of `chakra-ui`'s style props.
+This is the code for The Coderton newsletter site.
 
-## Deploy your own
+<p align="left">You can view the <a href="https://blog.jordanholt.dev/">live site here.</a></p>
 
-Deploy the example using [Vercel](https://vercel.com):
+### Features
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/next.js/tree/canary/examples/with-chakra-ui)
+- 📱 Responsive Design
+- 📆 Weekly posts about web development and programming
 
-## How to use
+<a href="https://www.buymeacoffee.com/jordanholtdev" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 200px !important;" ></a>
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+### Technologies
 
-```bash
-npx create-next-app --example with-chakra-ui with-chakra-ui-app
-# or
-yarn create next-app --example with-chakra-ui with-chakra-ui-app
-```
+- Next
+- React
+- 💅 Chakra-UI
+- npm
 
-Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+### License
+
+<p align="left">
+  <a href="https://github.com/jordanholtdev/jordan-holt-blog/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/jordanholtdev/jordan-holt-blog?label=License%20%F0%9F%92%A5" />
+  </a>
+</p>

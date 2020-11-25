@@ -1,55 +1,132 @@
 import {
   Link as ChakraLink,
   Text,
-  Code,
-  Icon,
-  List,
-  ListIcon,
-  ListItem,
-} from '@chakra-ui/react'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { Hero } from '../components/Hero'
-import { Container } from '../components/Container'
-import { Main } from '../components/Main'
-import { DarkModeSwitch } from '../components/DarkModeSwitch'
-import { CTA } from '../components/CTA'
-import { Footer } from '../components/Footer'
+  Box,
+  Heading,
+  Flex,
+  GridItem,
+  Stack,
+} from '@chakra-ui/react';
+import Link from 'next/link';
+import { ViewIcon } from '@chakra-ui/icons';
 
-const Index = () => (
-  <Container>
-    <Hero />
-    <Main>
-      <Text>
-        Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code>.
-      </Text>
+import { WrapperContainer } from '../components/WrapperContainer';
+import { Main } from '../components/Main';
+import { DarkModeSwitch } from '../components/DarkModeSwitch';
+import { Footer } from '../components/Footer';
+import { Subscribe } from '../components/Subscribe';
+import AdSpot from '../components/AdSpot';
 
-      <List spacing={3} my={0}>
-        <ListItem>
-          <ListIcon icon="check-circle" color="green.500" />
-          <ChakraLink
-            isExternal
-            href="https://chakra-ui.com"
-            flexGrow={1}
-            mr={2}
-          >
-            Chakra UI <Icon as={ExternalLinkIcon} mx="2px" />
-          </ChakraLink>
-        </ListItem>
-        <ListItem>
-          <ListIcon icon="check-circle" color="green.500" />
-          <ChakraLink isExternal href="https://nextjs.org" flexGrow={1} mr={2}>
-            Next.js <Icon as={ExternalLinkIcon} mx="2px" />
-          </ChakraLink>
-        </ListItem>
-      </List>
-    </Main>
+const Index = ({ result }) => {
+  return (
+    <WrapperContainer>
+      <Box height='16rem' width='100%'></Box>
+      <Main>
+        <GridItem colSpan={[4, 5, 3]} rowSpan={[1, 2]}>
+          <Heading as='h1' size='4xl'>
+            The Coderton
+          </Heading>
+          <Flex fontSize='2xl' my={[3, 4]}>
+            We show you the best tools and resources for web development, indie
+            hacking and digital creators.
+          </Flex>
+          <Text fontSize='16px' color='gray.500'>
+            Create something awesome today! Discover a growing library of 150+
+            tools, join a virtual event, and read the latest trends.
+          </Text>
+        </GridItem>
+        <GridItem colStart={1} colEnd={[3, 2, 3]}>
+          <Stack>
+            <Link href='/tools' passHref>
+              <ChakraLink
+                aria-label='contact page'
+                color='teal.400'
+                fontSize='20px'
+              >
+                Discover the tools ➡
+              </ChakraLink>
+            </Link>
+            <Link href='/podcasts' passHref>
+              <ChakraLink
+                aria-label='contact page'
+                color='teal.400'
+                fontSize='20px'
+              >
+                Listen to a Podcast ➡
+              </ChakraLink>
+            </Link>
+            <Link href='/#newsletter' passHref>
+              <ChakraLink
+                aria-label='contact page'
+                color='teal.400'
+                fontSize='20px'
+              >
+                Read the latest ➡
+              </ChakraLink>
+            </Link>
+          </Stack>
+          <Box mt='4rem'>
+            Found this useful?{' '}
+            <ChakraLink
+              href='https://www.buymeacoffee.com/thecoderton'
+              color='purple.400'
+              bgColor='yellow.100'
+              padding={2}
+              borderRadius='8px'
+            >
+              Support me here
+            </ChakraLink>
+          </Box>
+        </GridItem>
+        <GridItem colStart={[1, 2, 4]} colEnd={[3, 4, 6]} rowSpan={[2, 1]}>
+          <Box p='1rem'>
+            <Heading size='md'>
+              <ViewIcon /> Weekly spotlight
+            </Heading>
+          </Box>
+          <AdSpot adInfo={result} />
+        </GridItem>
+        <GridItem colSpan={3} id='newsletter'>
+          <Heading as='h2' size='xl'>
+            Read the latest
+          </Heading>
+          <Text fontSize='16px' color='gray.500' pt={4}>
+            Get the latest resources, techniques and articles about web
+            development in your inbox.
+          </Text>
+          <Subscribe />
+        </GridItem>
+      </Main>
+      <DarkModeSwitch />
+      <Footer>
+        <Text>Made with ❤️ by Jordan Holt</Text>
+      </Footer>
+    </WrapperContainer>
+  );
+};
 
-    <DarkModeSwitch />
-    <Footer>
-      <Text>Next ❤️ Chakra</Text>
-    </Footer>
-    <CTA />
-  </Container>
-)
+export async function getStaticProps() {
+  const ogs = require('open-graph-scraper');
 
-export default Index
+  const options = {
+    url: 'https://darknetdiaries.com/',
+  };
+
+  try {
+    const data = await ogs(options);
+
+    const { error, result, response } = data;
+    return {
+      props: { result },
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      props: {
+        error: 'Something went wrong',
+      },
+    };
+  }
+}
+
+export default Index;
