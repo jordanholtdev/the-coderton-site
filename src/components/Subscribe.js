@@ -104,7 +104,7 @@ export const Subscribe = () => {
             </Field>
             <Button
               mt={4}
-              colorScheme='blue'
+              colorScheme='teal'
               variant='outline'
               type='submit'
               isLoading={formik.isSubmitting}

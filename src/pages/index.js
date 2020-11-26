@@ -98,10 +98,7 @@ const Index = ({ result }) => {
         </GridItem>
       </Main>
       <DarkModeSwitch />
-      <Footer>
-        <Text size='xs'>© Jordan Holt 2020</Text>
-        <Text>Made with Next.js and 💖</Text>
-      </Footer>
+      <Footer />
     </WrapperContainer>
   );
 };

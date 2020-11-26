@@ -10,6 +10,7 @@ export const WrapperContainer = (props) => {
     <Flex
       direction='column'
       alignItems='center'
+      pb={8}
       justifyContent='flex-start'
       bg={bgColor[colorMode]}
       color={color[colorMode]}

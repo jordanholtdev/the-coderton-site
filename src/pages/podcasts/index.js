@@ -15,6 +15,7 @@ import {
 import Link from 'next/link';
 import { WrapperContainer } from '../../components/WrapperContainer';
 import { podcastTable, minifyRecords } from './../api/utils/Airtable';
+import { Footer } from '../../components/Footer';
 import { DarkModeSwitch } from '../../components/DarkModeSwitch';
 
 const PodcastCard = ({ id, fields, slug }) => (
@@ -94,6 +95,7 @@ const Podcasts = ({ initialPodcasts = [] }) => {
         ))}
       </SimpleGrid>
       <DarkModeSwitch />
+      <Footer />
     </WrapperContainer>
   );
 };

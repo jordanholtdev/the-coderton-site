@@ -19,6 +19,7 @@ import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { WrapperContainer } from '../../components/WrapperContainer';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Footer } from '../../components/Footer';
 
 const FeedCard = ({ title, link, pubDate, enclosure, content }) => {
   if (enclosure === undefined) {
@@ -62,7 +63,7 @@ const PodcastPage = ({ podcast, feed }) => {
             <Link href='/'>Home</Link>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <Link href='/podcasts'>Podcasts</Link>
+            <Link href='/podcasts'>podcasts</Link>
           </BreadcrumbItem>
           <BreadcrumbItem isCurrentPage>
             <BreadcrumbLink href='#'>{podcast.name}</BreadcrumbLink>
@@ -112,6 +113,7 @@ const PodcastPage = ({ podcast, feed }) => {
           ))}
         </Box>
       </Flex>
+      <Footer />
     </WrapperContainer>
   );
 };

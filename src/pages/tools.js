@@ -15,6 +15,7 @@ import { WrapperContainer } from '../components/WrapperContainer';
 import { DarkModeSwitch } from '../components/DarkModeSwitch';
 import Tool from '../components/Tool';
 import { table, minifyRecords } from './api/utils/Airtable';
+import { Footer } from '../components/Footer';
 
 const Tools = ({ initialTools }) => {
   return (
@@ -54,6 +55,7 @@ const Tools = ({ initialTools }) => {
         ))}
       </SimpleGrid>
       <DarkModeSwitch />
+      <Footer />
     </WrapperContainer>
   );
 };
