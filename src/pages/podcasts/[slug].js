@@ -10,11 +10,15 @@ import {
   Link as ChakraLink,
   HStack,
   Stack,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
 } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 import { WrapperContainer } from '../../components/WrapperContainer';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const FeedCard = ({ title, link, pubDate, enclosure, content }) => {
   if (enclosure === undefined) {
@@ -52,6 +56,19 @@ const FeedCard = ({ title, link, pubDate, enclosure, content }) => {
 const PodcastPage = ({ podcast, feed }) => {
   return (
     <WrapperContainer>
+      <Box maxW='400px' p={4}>
+        <Breadcrumb>
+          <BreadcrumbItem>
+            <Link href='/'>Home</Link>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <Link href='/podcasts'>Podcasts</Link>
+          </BreadcrumbItem>
+          <BreadcrumbItem isCurrentPage>
+            <BreadcrumbLink href='#'>{podcast.name}</BreadcrumbLink>
+          </BreadcrumbItem>
+        </Breadcrumb>
+      </Box>
       <Flex direction='column' alignItems='center' mt='3rem'>
         <HStack spacing={10} mb={10}>
           <Heading as='h1' size='4xl'>
@@ -84,7 +101,10 @@ const PodcastPage = ({ podcast, feed }) => {
             </ChakraLink>
           </HStack>
           <Divider />
-          <Alert backgroundColor='gray.200'>📝 {podcast.description}</Alert>
+          <Box pt={6}>
+            <Text mb={4}>The Coderton says:</Text>
+            <Text>📝 {podcast.description}</Text>
+          </Box>
         </Stack>
         <Box maxW='60rem' mt={10}>
           {feed.items.map((item) => (

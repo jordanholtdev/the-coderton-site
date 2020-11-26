@@ -16,6 +16,7 @@ import {
   useDisclosure,
   Flex,
   useColorMode,
+  HStack,
 } from '@chakra-ui/react';
 import { LinkIcon } from '@chakra-ui/icons';
 
@@ -36,35 +37,45 @@ const Tool = ({ tool }) => {
   return (
     <>
       <ChakraLink href={tool.fields.url} as='button' onClick={onOpen}>
-        <Flex justifyContent='center' direction='row'>
+        <Flex justify='space-evenly' alignContent='center' w='100%'>
           <Box
             p={4}
             borderRadius='6px'
             border='1px'
             borderColor='gray.300'
             flex='1 1 auto'
+            _hover={{ borderColor: 'teal.400' }}
           >
-            <Stack isInline alignItems='center'>
-              <Box maxW='50%' textAlign='left'>
-                <Heading as='h6' size='md' mb={1}>
-                  {tool.fields.name}
-                </Heading>
-                <Badge colorScheme='teal' my={1} variant='outline'>
+            <HStack alignItems='center' justifyContent='start' spacing={8}>
+              <Box textAlign='left' flex='250px 1 1'>
+                <Badge colorScheme='teal' variant='outline'>
                   {tool.fields.category}
                 </Badge>
-                <Text>{tool.fields.url}</Text>
               </Box>
-              <Box maxW='100%' flex=' auto'>
+              <Box
+                d='flex'
+                alignItems='center'
+                maxW='100%'
+                justifyContent='start'
+                flex='auto'
+              >
                 <Image
                   src={imageUrl}
                   borderRadius='full'
-                  width='80px'
-                  height='80px'
-                  boxSize='100px'
-                  objectFit='cover'
+                  width='100px'
+                  height='100px'
+                  objectFit='contain'
                 />
               </Box>
-            </Stack>
+              <Box textAlign='left' flex='400px 1 1' d='flex'>
+                <Heading as='h6' size='md'>
+                  {tool.fields.name}
+                </Heading>
+              </Box>
+              <Box flex='300px 1 1'>
+                <Text textAlign='left'>Learn more ➡</Text>
+              </Box>
+            </HStack>
           </Box>
         </Flex>
       </ChakraLink>

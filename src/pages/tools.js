@@ -31,23 +31,22 @@ const Tools = ({ initialTools }) => {
         </Breadcrumb>
       </Box>
       <Box mt='6rem' maxWidth='40rem'>
-        <Heading as='h1' size='4xl'>
+        <Heading as='h1' size='4xl' mb={4}>
           Discover the tools
         </Heading>
-        <Text>
-          Everything you need to create a unique project. This curated list only
-          includes tools that have been tested by the team at the The Coderton.
-        </Text>
-        <Text>
-          Missing something? Do you think your tool should be included on this
-          list? Let us know!
-        </Text>
+        <Box textAlign='left'>
+          <Text>
+            Everything you need to create an incredible project. This is a
+            curated list of tools for devs. Missing something? Let us know and
+            we'll add it the list.
+          </Text>
+        </Box>
       </Box>
       <SimpleGrid
         maxWidth='80rem'
         mt='6rem'
         overflow='hidden'
-        columns={{ sm: 1, md: null, lg: 3 }}
+        columns={{ sm: 1, md: null, lg: 2 }}
         spacing='10px'
       >
         {initialTools.map((tool) => (

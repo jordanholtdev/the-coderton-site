@@ -68,7 +68,7 @@ const Index = ({ result }) => {
           <Box mt='4rem'>
             Found this useful?{' '}
             <ChakraLink
-              href='https://www.buymeacoffee.com/thecoderton'
+              href='https://www.buymeacoffee.com/jordanholtdev'
               color='purple.400'
               bgColor='yellow.100'
               padding={2}
@@ -110,7 +110,7 @@ export async function getStaticProps() {
   const ogs = require('open-graph-scraper');
 
   const options = {
-    url: 'https://darknetdiaries.com/',
+    url: 'https://dev.to/',
   };
 
   try {
