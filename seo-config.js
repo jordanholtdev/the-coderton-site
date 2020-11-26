@@ -8,11 +8,11 @@ const SEO = {
     description: 'Discover the latest tools and resources for web development.',
     images: [
       {
-        url: 'https://daydrink.io/images/banner.png',
+        url: 'https://thecoderton/images/the-coderton-banner.png',
         width: 1200,
         height: 630,
         alt:
-          'daydrink | Find the best drink deals and happy hours in your area.',
+          'The Coderton | Discover the latest tools and resources for web development.',
       },
     ],
     site_name: 'The Coderton',
