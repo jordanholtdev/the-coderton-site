@@ -27,7 +27,7 @@ const PodcastCard = ({ id, fields, slug }) => (
               {fields.name}
             </Heading>
             <Text fontSize='sm'>{fields.description}</Text>
-            <Text fontSize='sm' color='gray.500' mt='6px'>
+            <Text fontSize='sm' color='gray.500' mt='6px' isTruncated>
               {fields.url}
             </Text>
           </Box>

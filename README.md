@@ -16,8 +16,6 @@
 
 This is the code for The Coderton newsletter site.
 
-<p align="left">You can view the <a href="https://blog.jordanholt.dev/">live site here.</a></p>
-
 ### Features
 
 - 📱 Responsive Design

@@ -99,7 +99,8 @@ const Index = ({ result }) => {
       </Main>
       <DarkModeSwitch />
       <Footer>
-        <Text>Made with ❤️ by Jordan Holt</Text>
+        <Text size='xs'>© Jordan Holt 2020</Text>
+        <Text>Made with Next.js and 💖</Text>
       </Footer>
     </WrapperContainer>
   );
