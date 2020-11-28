@@ -1,6 +1,4 @@
 import {
-  Alert,
-  AlertIcon,
   Divider,
   Flex,
   Box,
@@ -126,7 +124,9 @@ export async function getStaticPaths() {
     const podcasts = await podcastTable.select({}).firstPage();
     const initialPodcasts = minifyPodcasts(podcasts);
     const slugs = map(initialPodcasts, 'slug');
-    const paths = slugs.map((slug) => ({ params: { slug } }));
+    const paths = slugs.map((slug) => {
+      return { params: { slug } };
+    });
 
     return { paths, fallback: false };
   } catch (error) {
