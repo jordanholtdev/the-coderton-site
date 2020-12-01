@@ -27,12 +27,12 @@ const Index = ({ result }) => {
             The Coderton
           </Heading>
           <Flex fontSize='2xl' my={[3, 4]}>
-            We show you the best tools and resources for web development, indie
-            hacking and digital creators.
+            We show you the best tools and resources for web development, coding
+            and indie hacking.
           </Flex>
           <Text fontSize='16px' color='gray.500'>
-            Create something awesome today! Discover a growing library of 150+
-            tools, join a virtual event, and read the latest trends.
+            Create something awesome today! Discover a growing library of tools,
+            listen to a podcast, and read the latest trends.
           </Text>
         </GridItem>
         <GridItem colStart={1} colEnd={[3, 2, 3]}>
