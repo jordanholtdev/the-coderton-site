@@ -17,7 +17,6 @@ const minifyRecords = (records) => {
 const getMinifiedRecord = (record) => {
   return {
     id: record.id,
-    slug: slugger.slug(record.fields['name']),
     fields: record.fields,
   };
 };

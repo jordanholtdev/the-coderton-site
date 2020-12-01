@@ -14,7 +14,7 @@ import { WrapperContainer } from '../components/WrapperContainer';
 
 import { DarkModeSwitch } from '../components/DarkModeSwitch';
 import Tool from '../components/Tool';
-import { table, minifyRecords } from './api/utils/Airtable';
+
 import { Footer } from '../components/Footer';
 
 const Tools = ({ initialTools }) => {
@@ -61,6 +61,7 @@ const Tools = ({ initialTools }) => {
 };
 
 export async function getStaticProps() {
+  const { table, minifyRecords } = require('../../utils/Airtable');
   try {
     // Fetch data from external API
     const tools = await table.select({}).firstPage();

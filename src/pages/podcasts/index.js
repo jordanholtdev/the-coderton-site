@@ -10,16 +10,14 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  BreadcrumbSeparator,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import { WrapperContainer } from '../../components/WrapperContainer';
-import { podcastTable, minifyRecords } from './../api/utils/Airtable';
 import { Footer } from '../../components/Footer';
 import { DarkModeSwitch } from '../../components/DarkModeSwitch';
 
-const PodcastCard = ({ id, fields, slug }) => (
-  <Link href='/podcasts/[slug]' as={`/podcasts/${slug}`} passHref>
+const PodcastCard = ({ name, image, url, description }) => (
+  <Link href={url} as={`${url}`} passHref>
     <ChakraLink
       aria-label='contact page'
       fontSize='20px'
@@ -36,16 +34,16 @@ const PodcastCard = ({ id, fields, slug }) => (
           <Stack isInline justify='space-between' align='center'>
             <Box minW='60%'>
               <Heading as='h6' size='md' mb={2}>
-                {fields.name}
+                {name}
               </Heading>
-              <Text fontSize='sm'>{fields.description}</Text>
+              <Text fontSize='sm'>{description}</Text>
               <Text fontSize='sm' color='gray.500' mt='6px'>
                 Listen ➡
               </Text>
             </Box>
             <Box w='100%'>
               <Image
-                src={fields.image[0]?.thumbnails?.large?.url}
+                src={image}
                 borderRadius='8px'
                 boxSize='220px'
                 objectFit='contain'
@@ -101,11 +99,13 @@ const Podcasts = ({ initialPodcasts = [] }) => {
 };
 
 export async function getStaticProps() {
+  const { podcastTable, minifyPodcasts } = require('../../../utils/Airtable');
   try {
     // Fetch data from external API
     const podcasts = await podcastTable.select({}).firstPage();
+    const initialPodcasts = minifyPodcasts(podcasts);
 
-    return { props: { initialPodcasts: minifyRecords(podcasts) } };
+    return { props: { initialPodcasts } };
   } catch (error) {
     console.error(error);
     return {
