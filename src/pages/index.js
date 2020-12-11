@@ -107,7 +107,7 @@ export async function getStaticProps() {
   const ogs = require('open-graph-scraper');
 
   const options = {
-    url: 'https://dev.to/',
+    url: 'https://www.indiehackers.com/',
   };
 
   try {

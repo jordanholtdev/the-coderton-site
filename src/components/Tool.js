@@ -27,7 +27,7 @@ import { ExternalLinkIcon } from '@chakra-ui/icons';
 const Tool = ({ tool }) => {
   const { colorMode } = useColorMode();
   const bgColor = { light: 'white', dark: 'gray.700' };
-  const borderColor = { light: 'gray.400', dark: 'blue.100' };
+  const imageBg = { light: '#f7fafc', dark: 'white' };
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const finalRef = React.useRef();
@@ -40,7 +40,6 @@ const Tool = ({ tool }) => {
         <Flex justify='space-evenly' alignContent='center' w='100%'>
           <Box
             p={4}
-            borderRadius='6px'
             border='1px'
             borderColor='gray.300'
             flex='1 1 auto'
@@ -58,10 +57,10 @@ const Tool = ({ tool }) => {
                 maxW='100%'
                 justifyContent='start'
                 flex='auto'
+                bg={imageBg[colorMode]}
               >
                 <Image
                   src={imageUrl}
-                  borderRadius='full'
                   width='100px'
                   height='100px'
                   objectFit='contain'
