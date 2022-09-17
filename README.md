@@ -2,7 +2,7 @@
   </a>
 </p>
 <h1 align="center">
-  The Coderton newsletter site
+ ARCHIVED - The Coderton newsletter site
 </h1>
 
 <p align="center">
